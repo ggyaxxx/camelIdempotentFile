@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan(basePackages = {
-        "org.apache.camel.processor.idempotent.jpa" // <-- aggiunta necessaria
+        "org.apache.camel.processor.idempotent.jpa"
 })
 public class CamelApp {
     public static void main(String[] args) {

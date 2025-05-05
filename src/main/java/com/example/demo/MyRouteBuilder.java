@@ -8,11 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyRouteBuilder extends RouteBuilder {
 
-    private final IdempotentRepository repo;
 
-    public MyRouteBuilder(IdempotentRepository repo) {
-        this.repo = repo;
-    }
 
     @Override
     public void configure() throws Exception {
