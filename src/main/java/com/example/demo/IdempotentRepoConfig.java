@@ -21,6 +21,6 @@ public class IdempotentRepoConfig {
 
     @Bean(name="jpaStore")
     public IdempotentRepository jpaIdempotentRepository(EntityManagerFactory entityManagerFactory) {
-        return new JpaMessageIdRepository(entityManagerFactory, "MyRouteBuilder");
+        return new JpaMessageIdRepository(entityManagerFactory, "MyRouteBuilder2");
     }
 }
