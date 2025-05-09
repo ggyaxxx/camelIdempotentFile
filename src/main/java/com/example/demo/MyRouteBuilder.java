@@ -15,10 +15,16 @@ public class MyRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("file:input"+
-                "?preMove=processing" + // Sposta il file prima del processamento
-                "&delete=false" +                   // non cancellare da processingDirectory dopo la fine esecuzione rotta
-                "&initialDelay=1000&delay=5000")    // polling
+        from("file:" + inputDirectory +
+                "?preMove=" + processingDirectory + "/${file:name}" +
+                "&readLock=changed" +
+                "&readLockCheckInterval=1000" +
+                "&readLockMinLength=1" +
+                "&readLockMinAge=2000" +
+                "&delete=false" +
+                "&noop=true" +
+                "&initialDelay=1000&delay=5000")
+
                 .log("File originale ${header.CamelFileNameOriginal} pre-mosso in: " + processingDirectory)
                 .log("Inizio processamento per il file: ${header.CamelFilePath}") // CamelFilePath punta al file in processingDirectory
 
