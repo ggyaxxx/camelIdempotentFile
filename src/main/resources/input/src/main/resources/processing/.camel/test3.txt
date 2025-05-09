@@ -1,1 +1,0 @@
-Test idempotenza Mon May  5 10:48:06 AM CEST 2025
