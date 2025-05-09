@@ -30,7 +30,7 @@ public class MyRouteBuilder extends RouteBuilder {
 
         // La rotta Camel termina qui. Il file rimane nella directory 'processingDirectory'.
         // Il job Kubernetes è ora responsabile del file.
-        // Non c'è un '.to("file:...")' finale per spostare/scrivere il file da parte di Camel.
+
         ;
     }
 }
